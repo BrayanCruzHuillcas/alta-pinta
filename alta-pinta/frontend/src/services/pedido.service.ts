@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '../environments/environment';
 
 export interface PedidoResponse {
   pedidoId: number;
@@ -25,7 +26,7 @@ export interface ConfirmarPedidoRequest {
 @Injectable({ providedIn: 'root' })
 export class PedidoService {
 
-  private API_PEDIDO = 'http://localhost:8080/pedido';
+  private API_PEDIDO = `${environment.apiUrl}/pedido`;
 
   constructor(private http: HttpClient) {}
 
